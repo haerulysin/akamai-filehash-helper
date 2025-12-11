@@ -1,6 +1,6 @@
 {
   "name": "akamai-filehash-helper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Extract values from obfuscated JavaScript using Babel AST",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
