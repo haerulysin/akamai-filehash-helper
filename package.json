@@ -1,0 +1,55 @@
+{
+  "name": "akamai-filehash-helper",
+  "version": "1.0.0",
+  "description": "Extract values from obfuscated JavaScript using Babel AST",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "cd example && ts-node testFileHash.ts",
+    "ci": "pnpm install --frozen-lockfile",
+    "prepublishOnly": "pnpm run build",
+    "dev": "ts-node src/index.ts",
+    "watch": "tsc --watch"
+  },
+  "keywords": [
+    "babel",
+    "ast",
+    "obfuscated",
+    "javascript",
+    "extractor",
+    "akamai",
+    "filehash"
+  ],
+  "author": "Muh Khaerul",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haerulysin/akamai-filehash-helper.git"
+  },
+  "homepage": "https://github.com/haerulysin/akamai-filehash-helper",
+  "bugs": {
+    "url": "https://github.com/haerulysin/akamai-filehash-helper/issues"
+  },
+  "license": "MIT",
+  "packageManager": "pnpm@9.15.0",
+  "dependencies": {
+    "@babel/generator": "^7.23.6",
+    "@babel/parser": "^7.23.6",
+    "@babel/traverse": "^7.23.7",
+    "@babel/types": "^7.23.6"
+  },
+  "devDependencies": {
+    "@types/babel__generator": "^7.27.0",
+    "@types/babel__traverse": "^7.20.5",
+    "@types/node": "^20.10.0",
+    "i": "^0.3.7",
+    "npm": "^11.6.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
