@@ -24,13 +24,15 @@ jobs:
         with:
           node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
-      
-      - name: Configure npm registry
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      
+      - name: Configure npm registry for pnpm
         run: |
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
           pnpm config set registry https://registry.npmjs.org/
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
